@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source base.inc
+
+(cd $PROJECT_BASEDIR &&
+
+mvn release:prepare \
+-DpushChanges=false \
+-DautoVersionSubmodules=true \
+-Dtag="${TAG}" \
+-DreleaseVersion="${RELEASE_VERSION}" \
+-DdevelopmentVersion="${DEV_VERSION}" )

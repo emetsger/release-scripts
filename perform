@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source base.inc
+
+(cd $PROJECT_BASEDIR &&
+
+mvn release:perform \
+ -Dgoals=deploy  \
+ -DlocalCheckout=true )
