@@ -2,6 +2,15 @@
 
 source base.inc
 
+echo "Deploying maven artifacts for release version ${RELEASE_VERSION} of ${PROJECT_KEY}."
+RESPONSE=""
+
+while [ "${RESPONSE}" != "Y" ] ;
+do
+  echo "Press Y to continue"
+  read RESPONSE
+done
+
 (cd $PROJECT_BASEDIR &&
 
 mvn release:perform \
