@@ -2,6 +2,16 @@
 
 source base.inc
 
+echo "Releasing version ${RELEASE_VERSION} of ${PROJECT_KEY}."
+echo "Next development version will be ${DEV_VERSION}."
+RESPONSE=""
+
+while [ "${RESPONSE}" != "Y" ] ;
+do
+  echo "Press Y to continue"
+  read RESPONSE
+done
+
 (cd $PROJECT_BASEDIR &&
 
 mvn release:prepare \
